@@ -1,0 +1,27 @@
+.heading{
+    padding:0.8rem 8rem;
+}
+.heading-list{
+    list-style:none;
+    
+}
+.heading-list a,.heading-signup,.heading-list{
+    text-decoration: none;
+    font-size: 0.7rem;
+    color:#242120;
+    line-height: 15.23px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+.heading-signup{
+    background: #FF5C00;
+    border:1px solid #FF5C00;
+    border-radius:5px;
+    padding:5px 12px;
+    color:#fff
+}
+@media (max-width: 600px) {
+    .heading{
+        padding:2rem;
+    }
+}

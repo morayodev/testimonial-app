@@ -1,0 +1,49 @@
+.story-label{
+    font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 0.04em;
+
+color: #676767;
+}
+.story-question{
+    font-weight: normal;
+font-size: 0.8rem;
+line-height: 16px;
+letter-spacing: 0.04em;
+}
+.story-btn{
+    display: flex;
+    justify-content: flex-end;
+  
+}
+.story-btn button{
+    background: #FF5C00;
+    box-shadow: 2px 8px 30px rgba(230, 83, 0, 0.18);
+    border-radius: 8px;
+    color:#fff;
+    border:1px solid #FF5C00;
+    border-radius:8px;
+    padding:0.5rem 1.5rem;
+    font-size: 0.8rem;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #FF5C00;
+    outline: #FF5C00;
+    box-shadow: 0 0 0 0.05rem #FF5C00;
+}
+.form-check-input:checked{
+    background-color:#FF5C00;
+    border-color: #FF5C00;
+}
+.form-check-input:focus {
+    border-color: #FF5C00;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem #FF5C00;;
+}
+.story-checkbox{
+    margin-right:1rem;
+}

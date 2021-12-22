@@ -1,0 +1,38 @@
+.Hero-Testimony{
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding-left: 8rem;
+}
+.HeroTestimony-Name{
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+color: #474747;
+padding: 1rem 0px 0.5rem 0px;
+
+}
+.HeroTestimony-location{
+    padding-right: 1rem;
+    color: #535353;
+font-weight: 500;
+font-size: 0.8rem;
+line-height: 18px;
+}
+.HeroTestimony-customer{
+    color: #0D019A;
+    background: #EEF8FF;
+    border:1px solid #EEF8FF;
+    border-radius:5px;
+    padding:5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 18px;
+    font-size: 0.8rem;
+    text-transform:uppercase;
+}
+@media (max-width: 600px) {
+    .Hero-Testimony{
+        padding: 0rem 3rem;
+    }
+} 

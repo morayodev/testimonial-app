@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Header from "./components/Layout/Header/Header"
+import HeaderLink from "./components/Layout/HeaderLink/HeaderLink"
+import HeroSection from "./components/HeroSection/HeroSection"
+import HeroReview from "./components/HeroReview/HeroReview"
+import HeroTestimony from "./components/HeroTestimony/HeroTestimony"
+import  HeroMaganize from "./components/HeroMaganize/HeroMaganize"
+import Footer from "./components/Layout/Footer/Footer"
+import Story from "./components/Story/Story"
+import StoryNotification from "./components/StoryNotification/StoryNotification"
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <Header/> 
+  <HeaderLink/>
+  <HeroSection/>
+  <HeroReview/>
+  <HeroTestimony/>
+  < HeroMaganize/>
+  <Footer/>
+  <Story/>
+  <StoryNotification/>
+
+  </>
+    
+
   );
 }
 

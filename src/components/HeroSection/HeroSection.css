@@ -1,0 +1,57 @@
+.Hero-Section {
+    margin:0px 7rem;
+
+}
+.HeroText {
+    margin-top:6rem;
+    /* width: 50%; */
+}
+.HeroText h1{
+    width: 90%;
+    /* margin: auto; */
+    font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+color:#000
+}
+.HeroText p{
+    font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 31px;
+letter-spacing: 0.02em;
+/* width:85%; */
+color: #494949;
+}
+.HeroImage{
+    position: relative;
+    /* width: 50%; */
+    z-index:-1
+}
+.HeroImage ::before{
+    position: absolute;
+    content: "";
+    width:600px;
+    height: 600px;
+    background: #FFF8F5;
+    border-radius: 50%;
+    display: block;
+    left:-60px;
+    right:0px;
+    top:50px;
+    z-index:-1
+}
+@media (max-width: 600px) {
+    .Hero-Section {
+        margin:1rem 1rem 0rem 1rem;
+    
+    }
+    .HeroText h1{
+        width:100%;
+        font-size: 2.5rem;
+    }
+    .HeroImage ::before{
+        width: 130%;
+    }
+}

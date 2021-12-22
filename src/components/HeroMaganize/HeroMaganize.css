@@ -1,0 +1,47 @@
+.HeroSubscription{
+    background-color: #25201D;
+    margin-top: 3rem;
+}
+.HeroBanner img{
+    top: -50px;
+    position: relative;
+    z-index: 1;
+
+}
+.HeroBannerText{
+    color: #fff;
+    margin-top: 5rem;
+}
+.HeroBannerText h3{
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}
+.HeroBannerText p{
+    font-size:0.8rem;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+.HeroSubscriptionbtn{
+    background-color: #514D4A;
+    border:1px solid #514D4A;
+    border-radius:5px;
+}
+.HeroSubscriptionbtn ::placeholder{
+    color:#fff
+}
+.HeroSubscription-submit{
+    background-color: #fff;
+    font-weight: 500;
+font-size: 0.8rem;
+line-height: 15px;
+color: #242120;
+}
+@media (max-width: 600px) {
+    /* .HeroSubscription{
+        padding:0px 0.5rem;
+    } */
+    .HeroBanner img{
+top:0px;
+padding-top:1.5rem
+    }
+}

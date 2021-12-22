@@ -1,0 +1,82 @@
+.HeroReview{
+    background: #222222;
+    padding:4rem 4rem 0rem 4rem;
+  
+}
+.HeroReviewImg{
+    position: relative;
+    /* width: 70%; */
+    z-index: 1;
+}
+.HeroReviewImg ::before{
+    content: "";
+    background: #2E2E2E;
+    width:617px;
+    height: 630px;
+    position: absolute;
+   border-radius: 50%;
+   z-index: -1;
+   display: block;
+   left:0px;
+   right:0px;
+   top:-5px;
+}
+.HeroReviewText{
+    padding-left: 5rem;
+}
+.HeroReviewText h2{
+    color:#fff;
+    /* width:30%; */
+    font-weight:700;
+    font-family: Inter;
+    line-height:38.73px;
+    Width:375px;
+height :39px
+}
+.HeroReview-Button{
+    border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius:5px;
+    background: transparent;
+    color:#fff;
+    font-size:0.8rem;
+    padding:5px 10px;
+    text-transform: capitalize;
+    line-height: 16px;
+    font-weight: 500;
+}
+.HeroReviewText p{
+    font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 1rem;
+color:#fff;
+padding:3rem 0rem;
+}
+@media (max-width: 600px) {
+    .HeroReview{
+        padding:4rem 0px 0px 0px;
+      
+    }
+    .HeroReviewImg img{
+        width:90%;
+    }
+    .HeroReviewImg ::before{
+        width: 400px;
+        height: 400px;
+        top:25px;
+        left:0;
+        overflow-x: hidden!important;
+        /* right:-28px */
+    }
+    .HeroReviewText{
+        padding-left: 0rem;
+        text-align: start;
+        width:80%;
+        margin: auto;
+    }
+    .HeroReviewImg{
+        padding-top:2rem;
+    }
+
+
+}
