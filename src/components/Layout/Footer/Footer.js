@@ -52,7 +52,7 @@ const Footer = () => {
               <ul className="">
                 <li className="footer-list">Join our community</li>
                 <div className="d-flex">
-                  <li className=" footer-socialMedia mx-2">
+                  <li className="footer-socialMedia mx-2">
                     <img src={facebook} alt="facebook" />
                   </li>
 

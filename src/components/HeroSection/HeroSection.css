@@ -54,4 +54,8 @@ color: #494949;
     .HeroImage ::before{
         width: 130%;
     }
+    .HeroText {
+        margin-top:0rem;
+        /* width: 50%; */
+    }
 }
