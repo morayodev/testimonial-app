@@ -22,7 +22,7 @@ const Story = ({ setShowmodal}) => {
         lastName,
         story,
         user,
-        image,
+        preview,
         id: Math.floor(Math.random() * 100),
       },
     ]);
