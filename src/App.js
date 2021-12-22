@@ -14,6 +14,7 @@ const App = () => {
 
   return (
     <>
+    <div style={{overflowX:"hiiden"}}>
       <Header />
       <HeaderLink />
       <HeroSection />
@@ -22,6 +23,7 @@ const App = () => {
       <HeroMaganize />
       <Footer />
       <StoryNotification showModal={showModal} />
+      </div>
     </>
   );
 };
