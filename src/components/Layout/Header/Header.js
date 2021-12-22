@@ -3,7 +3,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center heading">
+      <div className="d-flex container justify-content-between align-items-center heading">
         <div>
           <h1 style={{fontSize:"0.8rem"}}>Varsiti</h1>
         </div>

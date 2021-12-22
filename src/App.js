@@ -14,15 +14,15 @@ const App = () => {
 
   return (
     <>
-    <div style={{overflowX:"hiiden"}}>
-      <Header />
-      <HeaderLink />
-      <HeroSection />
+    <div className="" style={{overflowX:"hiiden"}}>
+      {/* <Header /> */}
+      {/* <HeaderLink /> */}
+      {/* <HeroSection /> */}
       <HeroReview />
-      <Story setShowmodal={() => setShowmodal(!showModal)} />
-      <HeroMaganize />
-      <Footer />
-      <StoryNotification showModal={showModal} />
+      {/* <Story setShowmodal={() => setShowmodal(!showModal)} /> */}
+      {/* <HeroMaganize /> */}
+      {/* <Footer /> */}
+      {/* <StoryNotification showModal={showModal} /> */}
       </div>
     </>
   );
