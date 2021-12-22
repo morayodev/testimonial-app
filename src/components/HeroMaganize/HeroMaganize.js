@@ -17,7 +17,7 @@ const HeroMaganize = () => {
               Vasiti—thus, the world.
             </p>
           </div>
-          <div class="input-group mb-3">
+          <div className="input-group mb-3">
             <input
               type="text"
               className="form-control HeroSubscriptionbtn"
