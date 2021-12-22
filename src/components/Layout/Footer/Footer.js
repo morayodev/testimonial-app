@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="Footer py-5">
         <div className="col-md-10 col-12 m-auto">
           <div className="row">
-            <div className="col-md-2 col-6">
+            <div className="col-md-2 col-6 p-0">
               <ul>
                 <li className="footer-list">Company</li>
                 <li>Marketplace</li>
@@ -21,7 +21,7 @@ const Footer = () => {
                 <li>Services</li>
               </ul>
             </div>
-            <div className="col-md-2 col-6">
+            <div className="col-md-2 col-6 p-0">
               <ul>
                 <li className="footer-list">Products</li>
                 <li>Contact us</li>
@@ -30,7 +30,7 @@ const Footer = () => {
                 <li>Help/FAQs</li>
               </ul>
             </div>
-            <div className="col-md-3 col-6">
+            <div className="col-md-3 col-6 p-0">
               <ul>
                 <li className="footer-list"> Career</li>
                 <li>Become a Campus Rep</li>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <li>Become an Affiliate</li>
               </ul>
             </div>
-            <div className="col-md-2 col-6">
+            <div className="col-md-2 col-6 p-0">
               <ul>
                 <li className="footer-list">Get in touch</li>
                 <li>Marketplace</li>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li>Services</li>
               </ul>
             </div>
-            <div className="col-md-3 col-12">
+            <div className="col-md-3 col-12 p-0">
               <ul className="">
                 <li className="footer-list">Join our community</li>
                 <div className="d-flex">
