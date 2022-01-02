@@ -27,9 +27,7 @@ const Story = ({ setShowmodal}) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // fileInputRef.current.click()
     storyInformation(firstName, lastName, story, user,preview);
-    // navigate("/story-sucessful");
     setShowmodal()
   };
   useEffect(() => {

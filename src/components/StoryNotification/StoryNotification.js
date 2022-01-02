@@ -12,10 +12,7 @@ const StoryNotification = ({ showModal }) => {
     <div>
       <div className="col-md-5 col-12 m-auto ">
         <div className="row flex-column align-items-center px-4">
-          {/* <div className="notification-celeb"> */}
           <MdOutlineCelebration className="notification-celeb" />
-
-          {/* </div> */}
           <h2 className="col-8 text-center">
             Thank you for sharing your story!
           </h2>

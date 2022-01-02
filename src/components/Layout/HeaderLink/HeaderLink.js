@@ -2,7 +2,7 @@ import React from "react"
 import "./HeaderLink.css"
 const HeaderLink =()=>{
     return(
-        <div>
+        <div className="container-fluid">
         <ul className=" d-none d-md-flex heading-link py-2">
           <li className="px-4 heading-list">
           MARKETPLACE
