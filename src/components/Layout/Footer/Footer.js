@@ -56,7 +56,7 @@ const Footer = () => {
                     <img src={facebook} alt="facebook" />
                   </li>
 
-                  <li className="text-center footer-socialMedia mr-2">
+                  <li className="text-center footer-socialMedia mx-2">
                     <img src={instagram} alt="instagram" />
                   </li>
                   <li className="mx-2 footer-socialMedia ">
