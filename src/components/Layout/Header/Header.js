@@ -3,11 +3,12 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <div className="d-flex container justify-content-between align-items-center heading">
-        <div>
+    
+      <div className="row justify-content-evenly align-items-center heading">
+        <div className="col-md-6 col-12">
           <h1 style={{fontSize:"0.8rem"}}>Varsiti</h1>
         </div>
-        <div>
+        <div className="col-md-6 col-12">
           <ul className="d-md-flex d-none align-items-center m-0">
             <li className="px-3 heading-list">
             ABOUT US
