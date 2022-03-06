@@ -6,7 +6,7 @@ const StoryNotification = ({ showModal }) => {
   if (!showModal) {
     return <></>;
   }
-  console.log(showModal, "momo");
+  // console.log(showModal, "momo");
 
   return (
     <div>
