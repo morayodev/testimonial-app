@@ -5,8 +5,8 @@ import vasitifavicon from "../../../assets/vasiti.png";
 const Header = () => {
   return (
     <>
-      <div className="row justify-content-evenly heading align-items-start">
-        <div className="col-md-6 col-12  flex-start ">
+      <div className="row justify-content-evenly  align-items-start heading">
+        <div className="col-md-6 col-12 ">
           {/* <h1 style={{fontSize:"0.8rem"}}>Vacrsiti</h1> */}
           <img src={vasitifavicon} alt="vasitiLogo" />
         </div>
