@@ -1,16 +1,15 @@
-.Notification-btn{
-padding:0.5rem 3rem;
-    background: #FF5C00;
-    border-radius: 8px;
-    border:1px solid #FF5C00;
-    color:#fff;
-    font-size:0.8rem
+.Notification-btn {
+  padding: 1rem 4rem;
+  background: #ff5c00;
+  border-radius: 8px;
+  border: 1px solid #ff5c00;
+  color: #fff;
+  font-size: 0.8rem;
 }
-.notification-celeb{
-    width:70px;
-    height: 70px;
-    background: #FFF8F5;
-    border:1px solid #FFF8F5;
-    border-radius: 50%;
-    
+.notification-celeb {
+  width: 70px;
+  height: 70px;
+  background: #fff8f5;
+  border: 1px solid #fff8f5;
+  border-radius: 50%;
 }

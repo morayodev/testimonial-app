@@ -51,18 +51,18 @@ const Footer = () => {
             <div className="col-md-3 col-12 p-0">
               <ul className="">
                 <li className="footer-list">Join our community</li>
-                <div className="d-flex">
-                  <li className="footer-socialMedia mx-2">
+                <div className="d-flex gap-3">
+                  <li className="footer-socialMedia">
                     <img src={facebook} alt="facebook" />
                   </li>
 
-                  <li className="text-center footer-socialMedia mx-2">
+                  <li className="text-center footer-socialMedia ">
                     <img src={instagram} alt="instagram" />
                   </li>
-                  <li className="mx-2 footer-socialMedia ">
+                  <li className=" footer-socialMedia ">
                     <img src={twitter} alt="twitter" />
                   </li>
-                  <li className="mx-2 footer-socialMedia ">
+                  <li className=" footer-socialMedia ">
                     <img src={Linkedin} alt="Linkedin" />
                   </li>
                   

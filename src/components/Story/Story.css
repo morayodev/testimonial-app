@@ -55,8 +55,15 @@ letter-spacing: 0.04em;
     font-size:0.8rem;
     text-align: center;
     padding:1rem 2rem;
-    margin:2rem 0px;
+    margin-bottom:1rem;
 }
 /* #imageUpload[type="file"]{
     display: none;
 } */
+
+@media (max-width: 900px) {
+  .testimonymodal {
+    margin: 0rem;
+  }
+ 
+}

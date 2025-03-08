@@ -1,24 +1,24 @@
 import React from "react";
 import "./Header.css";
-import vasitifavicon from "../../../assets/vasiti.png";
+import vasitifavicon from "../../../assets/Vasiti-Logo-black 1.svg";
 
 const Header = () => {
   return (
     <>
-      <div className="row justify-content-evenly  align-items-start heading">
-        <div className="col-md-6 col-12 ">
+      <div className="d-flex  justify-content-evenly align-items-center heading">
+        <div className="col-md-6 col-12 py-3 ">
           {/* <h1 style={{fontSize:"0.8rem"}}>Vacrsiti</h1> */}
           <img src={vasitifavicon} alt="vasitiLogo" />
         </div>
-        <div className="col-md-6 col-12">
-          <ul className="d-md-flex d-none align-items-center m-0">
-            <li className="px-3 heading-list">ABOUT US</li>
-            <li className="px-3 heading-list">STORES</li>
-            <li className="px-3 heading-list">CONTACT</li>
-            <li className="px-3 heading-list">LOG IN</li>
-            <button className="heading-signup px-3">Sign up</button>
+        {/* <div className="col-md-6 col-12 mx-auto"> */}
+          <ul className="gap-3 d-md-flex d-none align-items-center m-0">
+            <li className=" heading-list">ABOUT US</li>
+            <li className=" heading-list">STORES</li>
+            <li className=" heading-list">CONTACT</li>
+            <li className=" heading-list">LOG IN</li>
+            <button className="heading-signup ">Sign up</button>
           </ul>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

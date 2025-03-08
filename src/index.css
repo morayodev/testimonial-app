@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* font-family: "Roboto"; */
   background: #fff;
-  overflow-x: hidden!important;
+  overflow-x: hidden;
   box-sizing: border-box;
   padding:0px;
 }

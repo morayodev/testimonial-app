@@ -11,18 +11,18 @@ import StoryNotification from "./components/StoryNotification/StoryNotification"
 
 const App = () => {
   const [showModal, setShowmodal] = useState(false);
-
+  console.log(showModal, "showModal");
   return (
     <>
-    <div className="" style={{overflowX:"hiiden"}}>
-      <Header />
-      <HeaderLink />
-      <HeroSection />
-      <HeroReview />
-      <Story setShowmodal={() => setShowmodal(!showModal)} />
-      <HeroMaganize />
-      <Footer />
-      <StoryNotification showModal={showModal} />
+      <div className="" style={{ overflowX: "hidden" }}>
+        <Header />
+        <HeaderLink />
+        <HeroSection />
+        <HeroReview />
+        <Story setShowmodal={setShowmodal} showModal={showModal} />
+        <HeroMaganize />
+        <Footer />
+        {/* <StoryNotification showModal={showModal} setShowmodal={setShowmodal} /> */}
       </div>
     </>
   );

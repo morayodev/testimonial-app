@@ -1,17 +1,20 @@
-import React, { useEffect, useState} from "react";
-// import { useNavigate,Routes,Route } from "react-router-dom";
-// import StoryNotification from "../StoryNotification/StoryNotification"
+import React, { useEffect, useRef, useState } from "react";
 import "./Story.css";
 import HeroTestimony from "../HeroTestimony/HeroTestimony";
+import StoryNotification from "../StoryNotification/StoryNotification";
 
-const Story = ({ setShowmodal}) => {
+const Story = ({ setShowmodal, showModal }) => {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
   const [story, setStory] = useState("");
   const [image, setImage] = useState();
   const [user, setUser] = useState();
-  const [preview,setPreview]=useState();
+  const [preview, setPreview] = useState();
   const [storydetails, setStorydetails] = useState([]);
+
+  const modalRef = useRef(null);
+  const notificationModalRef = useRef(null); // Ref for StoryNotification modal
+
   const storyInformation = (firstName, lastName, story, user, preview) => {
     setStorydetails([
       ...storydetails,
@@ -25,57 +28,100 @@ const Story = ({ setShowmodal}) => {
       },
     ]);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    storyInformation(firstName, lastName, story, user,preview);
-    setShowmodal()
+
+    // Ensure all fields are filled before submitting
+    if (!firstName || !lastName || !story || !user || !preview) {
+      alert("Please fill in all fields before submitting.");
+      return;
+    }
+
+    storyInformation(firstName, lastName, story, user, preview);
+    setFirstname("");
+    setLastname("");
+    setImage(null);
+    setStory("");
+    setUser("");
+    // setPreview(null);
+    document.getElementById("imageUpload").value = "";
+    document.querySelectorAll('input[name="user"]').forEach((radio) => {
+      radio.checked = false;
+    });
+
+    // Close Story modal
+    if (modalRef.current) {
+      const bootstrapModal = window.bootstrap.Modal.getInstance(modalRef.current);
+      if (bootstrapModal) {
+        bootstrapModal.hide();
+      }
+    }
   };
+
   useEffect(() => {
+    // Show image preview when user uploads
     if (image) {
       const reader = new FileReader();
-      reader.onloadend=()=>{
-        setPreview(reader.result)
+      reader.onloadend = () => {
+        setPreview(reader.result);
       };
-      reader.readAsDataURL(image)
+      reader.readAsDataURL(image);
     } else {
-      setPreview(null)
+      setPreview(null);
     }
   }, [image]);
+
+  useEffect(() => {
+    // Listen for Bootstrap modal close event to open StoryNotification modal
+    const modalElement = modalRef.current;
+    if (modalElement) {
+      modalElement.addEventListener("hidden.bs.modal", () => {
+        if (notificationModalRef.current) {
+          const notificationModal = new window.bootstrap.Modal(notificationModalRef.current);
+          notificationModal.show();
+        }
+      });
+    }
+
+    // return () => {
+    //   if (modalElement) {
+    //     modalElement.removeEventListener("hidden.bs.modal", () => {
+    //       if (notificationModalRef.current) {
+    //         const notificationModal = new window.bootstrap.Modal(notificationModalRef.current);
+    //         notificationModal.show();
+    //       }
+    //     });
+    //   }
+    // };
+  }, []);
+
   return (
     <>
       <HeroTestimony story={storydetails} />
       <div className="d-flex justify-content-center align-items-center">
-        <button
-          type="button"
-          className="testimonymodal"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
+        <button type="button" className="testimonymodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Add your Testimony
         </button>
       </div>
       <div className="col-md-5 col-12">
         <div
+          ref={modalRef}
           className="modal fade"
           id="exampleModal"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
+          data-bs-backdrop="static"
         >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-body">
-                <form
-                  onSubmit={handleSubmit}
-                  className="col-12 m-auto px-4 my-4"
-                >
+                <form onSubmit={handleSubmit} className="col-12 m-auto px-4 my-4">
                   <div className="row">
                     <h2>Share your amazing story!</h2>
                     <div className="col-12">
-                      <label
-                        htmlFor="imageUpload"
-                        className="form-label story-label"
-                      >
+                      <label htmlFor="imageUpload" className="form-label story-label">
                         Upload your Picture
                       </label>
                       <input
@@ -84,25 +130,15 @@ const Story = ({ setShowmodal}) => {
                         name="image-upload"
                         accept="image/*"
                         className="form-control"
-                        onChange={(event)=>{
+                        onChange={(event) => {
                           const file = event.target.files[0];
-                          if (file) {
-                            setImage(file);
-                          } else {
-                            setImage(null);
-                          }
+                          setImage(file || null);
                         }}
-                        // ref={fileInputRef}
                       />
                     </div>
                     <div className="row my-3 mx-0 p-0">
                       <div className="col-6">
-                        <label
-                          htmlFor="exampleInputEmail1"
-                          className="form-label story-label"
-                        >
-                          First Name
-                        </label>
+                        <label className="form-label story-label">First Name</label>
                         <input
                           type="text"
                           className="form-control"
@@ -112,12 +148,7 @@ const Story = ({ setShowmodal}) => {
                         />
                       </div>
                       <div className="col-6">
-                        <label
-                          htmlFor="exampleInputEmail1"
-                          className="form-label story-label"
-                        >
-                          Last Name
-                        </label>
+                        <label className="form-label story-label">Last Name</label>
                         <input
                           type="text"
                           value={lastName}
@@ -128,13 +159,10 @@ const Story = ({ setShowmodal}) => {
                       </div>
                     </div>
                     <div className="col-12">
-                      <label htmlFor="" className="form-label story-label">
-                        Share your story
-                      </label>
+                      <label className="form-label story-label">Share your story</label>
                       <textarea
                         className="form-control"
                         rows="5"
-                        type="text"
                         value={story}
                         onChange={(e) => setStory(e.target.value)}
                         required
@@ -153,15 +181,9 @@ const Story = ({ setShowmodal}) => {
                               value="customer"
                               name="user"
                               onChange={(e) => setUser(e.target.value)}
-                              id="flexRadioDefault1"
                               required
                             />
-                            <label
-                              className="form-check-label story-question"
-                              htmlFor="flexRadioDefault1"
-                            >
-                              Customer
-                            </label>
+                            <label className="form-check-label story-question">Customer</label>
                           </div>
                           <div className="form-check">
                             <input
@@ -170,22 +192,15 @@ const Story = ({ setShowmodal}) => {
                               value="vendor"
                               name="user"
                               onChange={(e) => setUser(e.target.value)}
-                              id="flexRadioDefault2"
                             />
-                            <label
-                              className="form-check-label story-question"
-                              htmlFor="flexRadioDefault2"
-                              required
-                            >
-                              Vendor
-                            </label>
+                            <label className="form-check-label story-question">Vendor</label>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="story-btn mt-3">
-                    <button>Share your story!</button>
+                    <button type="submit">Share your story!</button>
                   </div>
                 </form>
               </div>
@@ -193,7 +208,23 @@ const Story = ({ setShowmodal}) => {
           </div>
         </div>
       </div>
+
+      {/* ✅ StoryNotification as a Bootstrap Modal */}
+      <div
+        ref={notificationModalRef}
+        className="modal fade"
+        id="storyNotificationModal"
+        tabIndex="-1"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <StoryNotification notificationModalRef={notificationModalRef} />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
+
 export default Story;
